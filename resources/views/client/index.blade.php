@@ -1,9 +1,5 @@
 <x-app-layout>
-   <x-slot name="header">
-       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-           {{ __('Dashboard') }}
-       </h2>
-   </x-slot>
+   
    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    <script src="https://kit.fontawesome.com/7ad6698d85.js" crossorigin="anonymous"></script>
 
