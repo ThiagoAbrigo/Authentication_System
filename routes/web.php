@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\NumOrdreController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
@@ -38,5 +39,5 @@ Route::post('/register', [RegisterController::class, 'register'])->middleware('g
 
 Route::resource('client', ClientController::class);
 Route::resource('order', OrderController::class);
-
+Route::resource('showorders', NumOrdreController::class );
  

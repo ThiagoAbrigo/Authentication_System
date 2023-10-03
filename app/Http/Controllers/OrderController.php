@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\order;
+use App\Models\Order;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -23,9 +24,10 @@ class OrderController extends Controller
     public function create()
     {
         $order = new Order();
+        $client = Client::pluck('name','id');
 
         // client
-        return view('order.create', compact('order'));
+        return view('order.create', compact('order', 'client'));
     }
 
     /**
@@ -36,6 +38,7 @@ class OrderController extends Controller
         request()->validate(Order::$rules);
 
         $order = Order::create($request->all());
+       
 
         return redirect()->route('order.index')->with('success', 'Order created successfully');
     }
@@ -56,15 +59,15 @@ class OrderController extends Controller
     public function edit($id)
     {
         $order = Order::find($id);
-        //  clien
+        $client = Client::pluck('name', 'id');
 
-        return view('order.edit', compact('order'));
+        return view('order.edit', compact('order', 'client'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, order $order)
+    public function update(Request $request, Order $order)
     {
         request()->validate(Order::$rules);
 

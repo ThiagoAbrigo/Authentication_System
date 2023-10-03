@@ -76,9 +76,8 @@
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
 
-                            <a href="{{route('client.index')}}" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white "> Client</a>
+                            <a href="{{route('client.index')}}" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white "> Clients</a>
 
-                            <a href="{{route('order.index')}}" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white "> Order</a>
 
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">

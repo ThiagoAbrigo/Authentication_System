@@ -21,26 +21,41 @@
                             <th class="px-4 py-2">Name</th>
                             <th class="px-4 py-2">Email</th>
                             <th class="px-4 py-2">Show Orders</th>
-                            <th class="px-4 py-2">Actions</th>
+                            <th class="px-4 py-2">Add Order</th>
+
+                            <th class="px-4 py-2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach ($client as $item)
+                    @foreach ($client as $cli)
                         <tr>
                             <td> {{++$i}}</td>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->email}}</td>
+                            <td>{{$cli->name}}</td>
+                            <td>{{$cli->email}}</td>
                             <td> 
-                                <a href=""> <i class="fa-brands fa-shopify"></i> </a> 
+                                <a href="{{ route('showorders.index',['client' => $cli->name]) }}"   > <i class="fa-brands fa-shopify " style="color: #1458cc;" ></i>   </a> 
+                            </td>
+
+                            <td> 
+                                <a href="{{route('order.index')}}" >
+                                    <i class="fa-solid fa-cart-plus" style="color: #1458cc;"></i>    
+                                </a> 
                             </td>
                             <td>
-                                <form action="{{ route('client.destroy', $item->id) }}" method="POST">
-                                    <a class="btn btn-sm btn-primary " href="{{ route('client.show',$item->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                    <a class="btn btn-sm btn-success" href="{{ route('client.edit',$item->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                <form action="{{ route('client.destroy',$cli->id) }}" method="POST">
+                                    <a class="btn btn-sm btn-primary " href="{{ route('client.show',$cli->id) }}">
+                                        <i class="fa fa-fw fa-eye" style="color: #1aa958;"></i> {{ __('Show') }}
+                                    </a>
+                                    <a class="btn btn-sm btn-success" href="{{ route('client.edit',$cli->id) }}">
+                                        <i class="fa fa-fw fa-edit" style="color: #1458cc;"></i> 
+                                        {{ __('Edit') }}
+                                    </a>
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
-                                </form>   
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-fw fa-trash" style="color: #9e2b2b;"></i> {{ __('Delete') }}
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

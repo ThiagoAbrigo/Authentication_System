@@ -16,11 +16,11 @@ class order extends Model
 
     protected $perpage = 20;
 
-    protected $fillable = ['precio','cliente_id'];
+    protected $fillable = ['price','client_id'];
 
-    public function cliente()
+    public function client()
     {
-        return $this->hasOne('App\Models\Cliente', 'id', 'client_id');
+        return $this->hasOne('App\Models\Client', 'id', 'client_id');
     }
 
 }
