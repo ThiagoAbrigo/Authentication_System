@@ -10,7 +10,7 @@
                   <a href="{{ route('order.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">  {{ __('Create New') }} </a>
                </button>
                @if ($message = Session::get('success'))
-                  <div class="alert alert-success">
+                  <div class="alert">
                      <p>{{ $message }}</p>
                   </div>
                @endif
@@ -28,7 +28,7 @@
                         <tr>
                            <td class="body">{{ ++$i }}</td>      
                            <td class="body">{{ $ped->price }}</td>
-                           <td class="body">{{ $ped->client->name }}</td>
+                           <td class="bodyname">{{ $ped->client->name }}</td>
                            <td class="body">
                               <form action="{{ route('order.destroy',$ped->id) }}" method="POST">
                                  <a href="{{ route('order.show',$ped->id) }}">

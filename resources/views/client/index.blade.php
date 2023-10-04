@@ -26,8 +26,8 @@
                     @foreach ($client as $cli)
                         <tr>
                             <td class="body"> {{++$i}}</td>
-                            <td class="body">{{$cli->name}}</td>
-                            <td class="body">{{$cli->email}}</td>
+                            <td class="bodyname">{{$cli->name}}</td>
+                            <td class="bodyname">{{$cli->email}}</td>
                             <td class="body"> 
                                 <a href="{{ route('showorders.index',['client' => $cli->name]) }}"   > <i class="fa-brands fa-shopify "></i>   </a> 
                             </td>

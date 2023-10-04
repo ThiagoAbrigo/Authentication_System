@@ -4,19 +4,18 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg text-center">
-            <div class="float-right">
-                <section class="content container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
+    <div class="container">
+        <div>
+            <div>
+                <section >
+                    <div>
+                        <div >
                             @includeif('partials.errors')
                             <div>
-                                <div class="card-header">
-                                    <span class="card-title">{{ __('Create') }} Client</span>
+                                <div>
+                                    <span class="title">{{ __('Create') }} Client</span>
                                 </div>
-                                <div class="card-body">
+                                <div >
                                     <form method="POST" action="{{ route('client.store') }}"  role="form" enctype="multipart/form-data">
                                         @csrf
                                         @include('client.form')

@@ -6,30 +6,27 @@
    </x-slot>
    <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg text-center">
-               <section class="content container-fluid">
-                  <div class="row">
-                     <div class="col-md-12">
+         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg text-center">
+            <section class= "secshow" >
+               <div>
+                  <span class="title">{{ __('Create') }} Order</span>
+               </div>
+               <div>
+                  <div>
+                     @includeif('partials.errors')
+                     <div>
+                        <div>
+                           <form class="form-input" method="POST" action="{{ route('order.store') }}"  role="form" enctype="multipart/form-data">
+                           @csrf
+                           @include('order.form')
           
-                        @includeif('partials.errors')
-          
-                           <div class="card card-default">
-                              <div class="card-header">
-                                 <span class="card-title">{{ __('Create') }} Pedido</span>
-                              </div>
-                              <div class="card-body">
-                                 <form method="POST" action="{{ route('order.store') }}"  role="form" enctype="multipart/form-data">
-                                    @csrf
-          
-                                    @include('order.form')
-          
-                                 </form>
-                              </div>
-                           </div>
+                           </form>
+                        </div>
                      </div>
                   </div>
-               </section>
-            </div>
+               </div>
+            </section>
+         </div>
       </div>
    </div>
 </x-app-layout>

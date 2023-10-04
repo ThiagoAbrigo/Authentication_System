@@ -12,8 +12,8 @@
                @includeif('partials.errors')
              
                   <div class="card card-default">
-                     <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} order</span>
+                     <div>
+                        <span class="title">{{ __('Update') }} order</span>
                      </div>
                      <div class="card-body">
                         <form method="POST" action="{{ route('order.update', $order->id) }}"  role="form" enctype="multipart/form-data">
