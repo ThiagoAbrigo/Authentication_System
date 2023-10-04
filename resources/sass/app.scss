@@ -1,0 +1,97 @@
+$button-background-color: blue;
+$button-text-color: white;
+body {
+    font-family: inherit;
+    background-color: aqua;
+}
+@mixin button-style($background-color, $text-color) {
+    background-color: $background-color;
+    color: $text-color;
+    border: 2px solid;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+.btn-new-product {
+    @include button-style($button-background-color, $button-text-color);
+    margin-left: 120px;
+}
+//search products
+.filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+        margin-right: 30%;
+    }
+    select {
+        margin-right: -10%;
+        margin-top: -12%;
+        width: 220px;
+    }
+    button {
+        margin-left: 110%;
+        margin-top: -31%;
+        background-color: blue;
+    }
+}
+.crud-buttons {
+    display: flex;
+    align-items: center;
+}
+.crud-buttons button {
+    margin-left: 5px;
+    background-color: brown;
+}
+.custom-table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fcf4f4;
+
+    th,
+    td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    th {
+        &:nth-child(1) {
+            width: 2%;
+        }
+
+        &:nth-child(2) {
+            width: 10%;
+        }
+
+        &:nth-child(3) {
+            width: 10%;
+        }
+
+        &:nth-child(4) {
+            width: 10%;
+        }
+
+        &:nth-child(5) {
+            width: 10%;
+        }
+
+        &:nth-child(6) {
+            width: 0%;
+        }
+    }
+}
+.custom-title {
+    text-align: center;
+    font-size: 35px;
+    color: #000000;
+}
+.container {
+    border-radius: 10px;
+    background-color: #f7dada;
+}
+@import "create";

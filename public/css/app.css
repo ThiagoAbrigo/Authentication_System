@@ -1,0 +1,147 @@
+body {
+  font-family: inherit;
+  background-color: aqua;
+}
+
+.btn-new-product {
+  background-color: blue;
+  color: white;
+  border: 2px solid;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  margin-left: 120px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.filters h1 {
+  margin-right: 30%;
+}
+.filters select {
+  margin-right: -10%;
+  margin-top: -12%;
+  width: 220px;
+}
+.filters button {
+  margin-left: 110%;
+  margin-top: -31%;
+  background-color: blue;
+}
+
+.crud-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.crud-buttons button {
+  margin-left: 5px;
+  background-color: brown;
+}
+
+.custom-table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fcf4f4;
+}
+.custom-table th,
+.custom-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.custom-table th:nth-child(1) {
+  width: 2%;
+}
+.custom-table th:nth-child(2) {
+  width: 10%;
+}
+.custom-table th:nth-child(3) {
+  width: 10%;
+}
+.custom-table th:nth-child(4) {
+  width: 10%;
+}
+.custom-table th:nth-child(5) {
+  width: 10%;
+}
+.custom-table th:nth-child(6) {
+  width: 0%;
+}
+
+.custom-title {
+  text-align: center;
+  font-size: 35px;
+  color: #000000;
+}
+
+.container {
+  border-radius: 10px;
+  background-color: #f7dada;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(206, 206, 206);
+}
+
+.custom-form {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+}
+.custom-form legend {
+  text-align: center;
+}
+
+.button-custom button {
+  margin-left: 10%;
+}
+.button-custom a {
+  margin-left: 25%;
+  background-color: black;
+  color: rgb(255, 255, 255);
+}
+
+.container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.custom-select {
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  background-color: #f2f2f2;
+  color: #000;
+  cursor: pointer;
+}
+
+.custom-select::after {
+  content: "\f078";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #000;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.custom-select:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*# sourceMappingURL=app.css.map */
