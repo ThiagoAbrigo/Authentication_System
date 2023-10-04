@@ -4,56 +4,52 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7ad6698d85.js" crossorigin="anonymous"></script>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg text-center">
-                <div class="float-right">
-                    <a  href="{{ route('client.create') }}" class="block px-4 py-2 text-black bg-blue-500 hover:bg-blue-600">
+    <div class="container">
+        <div class="table">
+                <button class="button-create">
+                    <a  href="{{ route('client.create') }}" >
                     {{ __('Create New') }}</a>
-                </div>
-                <table class="w-full table-auto">
+                </button>
+                <table>
                     <thead>
-                        <tr class="bg-gray-800 text-white">
-                            <th class="px-4 py-2">No</th>
-                            <th class="px-4 py-2">Name</th>
-                            <th class="px-4 py-2">Email</th>
-                            <th class="px-4 py-2">Show Orders</th>
-                            <th class="px-4 py-2">Add Order</th>
+                        <tr>
+                            <th class="head">No</th>
+                            <th class="head">Name</th>
+                            <th class="head">Email</th>
+                            <th class="head">Show Orders</th>
+                            <th class="head">Add Order</th>
 
-                            <th class="px-4 py-2">Action</th>
+                            <th class="head">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach ($client as $cli)
                         <tr>
-                            <td> {{++$i}}</td>
-                            <td>{{$cli->name}}</td>
-                            <td>{{$cli->email}}</td>
-                            <td> 
-                                <a href="{{ route('showorders.index',['client' => $cli->name]) }}"   > <i class="fa-brands fa-shopify " style="color: #1458cc;" ></i>   </a> 
+                            <td class="body"> {{++$i}}</td>
+                            <td class="body">{{$cli->name}}</td>
+                            <td class="body">{{$cli->email}}</td>
+                            <td class="body"> 
+                                <a href="{{ route('showorders.index',['client' => $cli->name]) }}"   > <i class="fa-brands fa-shopify "></i>   </a> 
                             </td>
-
-                            <td> 
+                            <td class="body"> 
                                 <a href="{{route('order.index')}}" >
-                                    <i class="fa-solid fa-cart-plus" style="color: #1458cc;"></i>    
+                                    <i class="fa-solid fa-cart-plus"></i>    
                                 </a> 
                             </td>
-                            <td>
+                            <td class="body">
                                 <form action="{{ route('client.destroy',$cli->id) }}" method="POST">
-                                    <a class="btn btn-sm btn-primary " href="{{ route('client.show',$cli->id) }}">
-                                        <i class="fa fa-fw fa-eye" style="color: #1aa958;"></i> {{ __('Show') }}
+                                    <a href="{{ route('client.show',$cli->id) }}">
+                                        <i class="fa fa-fw fa-eye" show> </i> 
+                                        {{ __('Show') }}
                                     </a>
-                                    <a class="btn btn-sm btn-success" href="{{ route('client.edit',$cli->id) }}">
-                                        <i class="fa fa-fw fa-edit" style="color: #1458cc;"></i> 
+                                    <a  href="{{ route('client.edit',$cli->id) }}">
+                                        <i class="fa fa-fw fa-edit edit" ></i> 
                                         {{ __('Edit') }}
                                     </a>
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-fw fa-trash" style="color: #9e2b2b;"></i> {{ __('Delete') }}
+                                    <button type="submit" >
+                                        <i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}
                                     </button>
                                 </form>
                             </td>
@@ -64,5 +60,5 @@
                 </table>
             </div>
         </div>
-    </div>
+    
 </x-app-layout>

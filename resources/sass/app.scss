@@ -1,0 +1,91 @@
+// styles index of client, order
+$color-icon: #2196F3;
+$color-blue: #00BCD4; 
+$buton-create: (
+   background-color: #aadae0, 
+   color: black,
+   border: 1px solid rgb(250, 249, 246),
+   padding: 7px,
+   border-radius: 10px,
+   margin: 30px 30px 15px 0px
+);
+
+
+.container {
+   background-color: rgb(241, 239, 239);
+   height: 100px;
+   width: 90%px;
+   display: grid;
+   place-items: center; 
+   
+   .button-create {
+      @each $property, $value in $buton-create {
+      #{$property}: $value;
+      &:hover {
+      background-color: $color-blue
+      }
+      }
+   }
+
+   th.head {
+      background-color: black;
+      color: white;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 10px 40px;
+   }
+
+   td.body {
+      text-align: center;
+      padding: 10px 40px;
+      border-collapse: collapse;
+      border-bottom: 1px solid black;   
+   }
+
+   tbody tr {
+      background-color: rgba(248, 245, 245, 0.5);
+      &:hover {
+         background-color: rgba(207, 204, 204, 0.5) 
+      }
+   }
+   // icon action
+   .fa-eye:before {
+      color: #4CAF50;
+   }
+   .fa.fa-edit:before {
+      color: $color-blue;
+   }
+   .fa.fa-trash:before {
+      color: red;
+   }
+
+
+   // icon order
+   .fa-shopify:before {
+      color: $color-icon;
+      font-size: 17px;
+      transition: transform 0.2s, font-size 0.2s;
+   }
+   .fa-shopify:hover:before {
+      font-size: 22px;
+      color: #4CAF50;  
+   }
+   .fa-cart-plus:before {
+      color: $color-icon;
+      transition: transform 0.2s, font-size 0.2s;
+   }
+   .fa-cart-plus:hover:before {
+      font-size: 22px;
+      color: #4CAF50; 
+   }
+}
+// --------------
+
+
+
+
+
+
+
+
+
