@@ -38,7 +38,7 @@ class ProductController extends Controller
         $products->cantidad = $request->input('cantidad');
         $products->categoria_id = $request->input('categoria_id');
         $products->save();
-        return redirect()->back();
+        return redirect()->route('crudclient.index')->with('success', 'Product created successfully');
     }
 
     /**
