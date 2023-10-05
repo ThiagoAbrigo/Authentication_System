@@ -12,6 +12,6 @@ class Product extends Model
     public $timestamps = false;
     public function category()
     {
-        return $this->hasMany(Category::class, 'categoria_id', 'categoria_id');
+        return $this->belongsTo(Category::class, 'categoria_id', 'categoria_id');
     }
 }
