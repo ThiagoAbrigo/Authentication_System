@@ -33,17 +33,17 @@
                               <form action="{{ route('order.destroy',$ped->id) }}" method="POST">
                                  <a href="{{ route('order.show',$ped->id) }}">
                                     <i class="fa fa-fw fa-eye" ></i> 
-                                    {{ __('Show') }}
+                                   
                                  </a>
                                  <a href="{{ route('order.edit',$ped->id) }}">
                                     <i class="fa fa-fw fa-edit"></i> 
-                                    {{ __('Edit') }}
+                                    
                                  </a>
                                  @csrf
                                  @method('DELETE')
                                  <button type="submit" >
                                     <i class="fa fa-fw fa-trash" style="color: #9e2b2b;"></i> 
-                                       {{ __('Delete') }}
+                                       
                                  </button>
                               </form>
                            </td>

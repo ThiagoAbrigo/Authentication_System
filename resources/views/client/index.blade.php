@@ -40,16 +40,16 @@
                                 <form action="{{ route('client.destroy',$cli->id) }}" method="POST">
                                     <a href="{{ route('client.show',$cli->id) }}">
                                         <i class="fa fa-fw fa-eye" show> </i> 
-                                        {{ __('Show') }}
+                                    
                                     </a>
                                     <a  href="{{ route('client.edit',$cli->id) }}">
                                         <i class="fa fa-fw fa-edit edit" ></i> 
-                                        {{ __('Edit') }}
+                                        
                                     </a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" >
-                                        <i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}
+                                        <i class="fa fa-fw fa-trash"></i> 
                                     </button>
                                 </form>
                             </td>
