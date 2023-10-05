@@ -13,22 +13,22 @@
   margin: 30px 30px 15px 0px;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container th.head {
   background-color: black;
@@ -50,30 +50,30 @@
   background-color: rgba(207, 204, 204, 0.5);
 }
 .container .fa-eye:before {
-  color: #4CAF50;
+  color: #4caf50;
 }
 .container .fa.fa-edit:before {
-  color: #00BCD4;
+  color: #00bcd4;
 }
 .container .fa.fa-trash:before {
   color: red;
 }
 .container .fa-shopify:before {
-  color: #2196F3;
+  color: #2196f3;
   font-size: 17px;
   transition: transform 0.2s, font-size 0.2s;
 }
 .container .fa-shopify:hover:before {
   font-size: 22px;
-  color: #4CAF50;
+  color: #4caf50;
 }
 .container .fa-cart-plus:before {
-  color: #2196F3;
+  color: #2196f3;
   transition: transform 0.2s, font-size 0.2s;
 }
 .container .fa-cart-plus:hover:before {
   font-size: 22px;
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 span.title {
@@ -90,7 +90,7 @@ i.fa-solid.fa-circle-arrow-left {
 }
 
 .fa-circle-arrow-left:before {
-  color: #00BCD4;
+  color: #00bcd4;
   font-size: 23px;
   margin: 10px;
 }
@@ -184,6 +184,14 @@ td.bodyname {
   padding: 10px 40px;
   border-collapse: collapse;
   border-bottom: 1px solid black;
+}
+
+.custom-title {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 40px;
 }
 
 /*# sourceMappingURL=app.css.map */
