@@ -11,7 +11,7 @@
                </div>
                <div class="form-group">
                    {{ Form::label('email', 'Email', ['class' => 'my-label']) }}
-                   {{ Form::email('email', $client->email, ['class' => 'form-control my-input', 'type' => 'email' . ($errors->has('email') ? ' is-invalid' : ''),'placeholder' => 'Email']) }}
+                   {{ Form::email('email', $client->email, ['class' => 'form-control my-input', . ($errors->has('email') ? ' is-invalid' : ''),'placeholder' => 'Email']) }}
                    {!! $errors->first('email', '<div class="invalid-feedback">:message</div>') !!}
                </div>
                <div class="container-button">

@@ -26,7 +26,7 @@
             <tbody>
                @foreach($order as $orden)
                <tr>
-                  <td class="body"> {{ $orden->price }} </td>
+                  <td class="body"> {{ '$ '.$orden->price }} </td>
                   <td class="body"> {{ $orden->created_at }} </td>
                </tr>
                @endforeach

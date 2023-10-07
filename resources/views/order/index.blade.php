@@ -27,22 +27,25 @@
                      @foreach ($order as $ped)
                         <tr>
                            <td class="body">{{ ++$i }}</td>      
-                           <td class="body">{{ $ped->price }}</td>
+                           <td class="body">{{'$ '. $ped->price }}</td>
                            <td class="bodyname">{{ $ped->client->name }}</td>
                            <td class="body">
                               <form action="{{ route('order.destroy',$ped->id) }}" method="POST">
-                                 <a href="{{ route('order.show',$ped->id) }}">
+                                 <a href="{{ route('order.show',$ped->id) }}" class="icon-container">
                                     <i class="fa fa-fw fa-eye" ></i> 
+                                    <span class="icon-text">SHOW</span>
                                    
                                  </a>
-                                 <a href="{{ route('order.edit',$ped->id) }}">
+                                 <a href="{{ route('order.edit',$ped->id) }}" class="icon-container">
                                     <i class="fa fa-fw fa-edit"></i> 
+                                    <span class="icon-text">EDIT</span>
                                     
                                  </a>
                                  @csrf
                                  @method('DELETE')
-                                 <button type="submit" >
-                                    <i class="fa fa-fw fa-trash" style="color: #9e2b2b;"></i> 
+                                 <button type="submit" class="icon-container">
+                                    <i class="fa fa-fw fa-trash" ></i> 
+                                    <span class="icon-text">DELETE</span>
                                        
                                  </button>
                               </form>
