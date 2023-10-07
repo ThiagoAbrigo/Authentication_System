@@ -1,4 +1,4 @@
-<div class="container">
+ <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <form>
@@ -9,9 +9,9 @@
                     {!! $errors->first('cliente_id', '<div class="invalid-feedback">:message</div>') !!}
                 </div>
                 <div class="form-group">
-                    {{ Form::label('price') }}
-                    {{ Form::text('price', $order->price, ['class' => 'form-control' . ($errors->has('price') ? ' is-invalid' : ''), 'placeholder' => 'Price']) }}
-                    {!! $errors->first('precio', '<div class="invalid-feedback">:message</div>') !!}
+                    {{ Form::label('price', 'Price') }}
+                    {{ Form::number('price', $order->price, ['step'=> '0.01', 'class' => 'form-control' . ($errors->has('price') ? ' is-invalid' : ''), 'placeholder' => 'Price']) }}
+                    {!! $errors->first('price', '<div class="invalid-feedback">:message</div>') !!}
                 </div>
         
             </div>

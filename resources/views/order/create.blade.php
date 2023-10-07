@@ -17,9 +17,13 @@
                         </div>
                         <div>
                            <form method="POST" action="{{ route('order.store') }}"  role="form" enctype="multipart/form-data">
+                           @if($errors->has('price'))
+                           <div class="alert alert-danger">
+                                  {{ $errors->first('price') }}
+                              </div>
+                          @endif
                            @csrf
                            @include('order.form')
-          
                            </form>
                         </div>
                      </div>

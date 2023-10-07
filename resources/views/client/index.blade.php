@@ -26,7 +26,7 @@
                     @foreach ($client as $cli)
                         <tr>
                             <td class="body"> {{++$i}}</td>
-                            <td class="bodyname">{{$cli->name}}</td>
+                            <td class="bodyname nameClient">{{$cli->name}}</td>
                             <td class="bodyname">{{$cli->email}}</td>
                             <td class="body"> 
                                 <a href="{{ route('showorders.index',['client' => $cli->name]) }}"   > <i class="fa-brands fa-shopify "></i>   </a> 
@@ -38,18 +38,21 @@
                             </td>
                             <td class="body">
                                 <form action="{{ route('client.destroy',$cli->id) }}" method="POST">
-                                    <a href="{{ route('client.show',$cli->id) }}">
-                                        <i class="fa fa-fw fa-eye" show> </i> 
+                                    <a href="{{ route('client.show',$cli->id) }}" class="icon-container">
+                                        <i class="fa fa-fw fa-eye" show> </i>
+                                        <span class="icon-text">SHOW</span>
                                     
                                     </a>
-                                    <a  href="{{ route('client.edit',$cli->id) }}">
+                                    <a  href="{{ route('client.edit',$cli->id) }}" class="icon-container">
                                         <i class="fa fa-fw fa-edit edit" ></i> 
+                                        <span class="icon-text">EDIT</span>
                                         
                                     </a>
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" >
+                                    <button class="icon-container" >
                                         <i class="fa fa-fw fa-trash"></i> 
+                                        <span class="icon-text">DELETE</span>
                                     </button>
                                 </form>
                             </td>

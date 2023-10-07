@@ -49,6 +49,33 @@
 .container tbody tr:hover {
   background-color: rgba(207, 204, 204, 0.5);
 }
+.container .icon-container {
+  position: relative;
+  display: inline-block;
+}
+.container .icon-container .fa-fw {
+  font-size: 17px;
+  transition: transform 0.3s, font-size 0.3s;
+}
+.container .icon-container .fa-fw:hover {
+  font-size: 30x;
+}
+.container .icon-container .icon-text {
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-30%);
+  transition: opacity 0.3s;
+}
+.container .icon-container:hover .fa-fw {
+  font-size: 22px;
+}
+.container .icon-container:hover .icon-text {
+  opacity: 1;
+  color: black;
+  font-weight: bold;
+}
 .container .fa-eye:before {
   color: #4CAF50;
 }
@@ -110,7 +137,8 @@ i.fa-solid.fa-circle-arrow-left {
   width: 70%;
 }
 
-input#name {
+input#name,
+input#email {
   border-radius: 10px;
   width: 300px;
   background: none;
@@ -118,10 +146,6 @@ input#name {
 }
 
 input#email {
-  border-radius: 10px;
-  width: 300px;
-  background: none;
-  border: 1px solid black;
   margin: 0px 0px 0px 5px;
 }
 
@@ -184,6 +208,10 @@ td.bodyname {
   padding: 10px 40px;
   border-collapse: collapse;
   border-bottom: 1px solid black;
+}
+
+.nameClient {
+  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=app.css.map */

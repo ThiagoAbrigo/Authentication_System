@@ -7,6 +7,7 @@ use GuzzleHttp\Client as GuzzleHttpClient;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 use Spatie\FlareClient\Http\Client as HttpClient;
+use Illuminate\Support\Facades\Validator;
 
 class ClientController extends Controller
 {
@@ -34,16 +35,28 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Client::$rules);
+        $rules =['name' => 'required',
+                'email' => 'required|email|unique:clients,email', ];
+
+        $messages = [
+            'email.unique' => 'El correo electrónico ya está en uso.',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->route('client.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
 
         $client = Client::create($request->all());
 
         return  redirect()->route('client.index')->with('success', 'Client created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
     public function show($id)
     {
         $client = Client::find($id);

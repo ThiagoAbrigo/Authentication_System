@@ -2,16 +2,6 @@
 $color-icon: #2196F3;
 $color-blue: #00BCD4; 
 $color-orders :#4CAF50;  
-
-@mixin title {
-      display: grid;
-      place-items: center;
-      text-transform: uppercase;
-      font-weight: bold;
-      padding: 10px;
-      letter-spacing: 2px;
-   }
-
 $buton-create: (
    background-color: #aadae0, 
    color: black,
@@ -27,10 +17,20 @@ $buton-back: (
    margin: 10px,
 );
 
+@mixin title {
+   display: grid;
+   place-items: center;
+   text-transform: uppercase;
+   font-weight: bold;
+   padding: 10px;
+   letter-spacing: 2px;
+   }
+
+
+
 .container {
    background-color: rgb(241, 239, 239);
    height: auto;
-   
    display: grid;
    place-items: center; 
    
@@ -65,6 +65,38 @@ $buton-back: (
       }
    }
    // icon action
+
+   .icon-container {
+      position: relative;
+      display: inline-block;
+      .fa-fw {
+         font-size: 17px;
+         transition: transform 0.3s, font-size 0.3s;
+         &:hover{
+            font-size: 30x;
+         }
+      }
+      .icon-text {
+         opacity: 0;
+         position: absolute;
+         top: 100%;
+         left: 50%;
+         transform: translateX(-30%);
+         transition: opacity 0.3s;
+        
+      }
+      &:hover .fa-fw{
+         font-size: 22px;
+      }
+     
+      &:hover .icon-text {
+         opacity: 1;
+         color: black;
+         font-weight: bold;
+      }
+   }
+
+
    .fa-eye:before {
       color: #4CAF50;
    }
@@ -74,6 +106,8 @@ $buton-back: (
    .fa.fa-trash:before {
       color: red;
    }
+
+  
 
 
    // icon order
@@ -136,11 +170,11 @@ i.fa-solid.fa-circle-arrow-left {
 
 }
 
-input#name {
+input#name, 
+input#email {
    @include input()  
 }
-input#email {
-   @include input();    
+input#email {   
    margin: 0px 0px 0px 5px;
 }
 
@@ -161,8 +195,6 @@ button.submit {
    font-weight: bold;
    background-color: rgb(161, 221, 161);
 }
-
-
 .input-order {
    padding: 15px;
 }
@@ -199,5 +231,11 @@ td.bodyname {
          padding: 10px 40px;
          border-collapse: collapse;
          border-bottom: 1px solid black; 
+
+      }
+
+.nameClient {
+
+   text-transform: capitalize;
 
       }
