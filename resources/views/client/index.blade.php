@@ -6,23 +6,23 @@
     </x-slot>
     <div class="container">
         <div class="table">
-                <button class="button-create">
-                    <a  href="{{ route('client.create') }}" >
+            <button class="button-create">
+                <a href="{{ route('client.create') }}">
                     {{ __('Create New') }}</a>
-                </button>
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="head">No</th>
-                            <th class="head">Name</th>
-                            <th class="head">Email</th>
-                            <th class="head">Show Orders</th>
-                            <th class="head">Add Order</th>
+            </button>
+            <table>
+                <thead class="custom-title">
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Show Orders</th>
+                        <th>Add Order</th>
 
-                            <th class="head">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
                     @foreach ($client as $cli)
                         <tr>
                             <td class="body"> {{++$i}}</td>
@@ -58,10 +58,9 @@
                             </td>
                         </tr>
                     @endforeach
-                    </tbody>
-                  <!-- Contenido de la tabla -->
-                </table>
-            </div>
+                </tbody>
+            </table>
         </div>
-    
+    </div>
+
 </x-app-layout>

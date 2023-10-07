@@ -3,6 +3,10 @@
   height: auto;
   display: grid;
   place-items: center;
+  background-color: rgb(241, 239, 239);
+  height: auto;
+  display: grid;
+  place-items: center;
 }
 .container .button-create {
   background-color: #aadae0;
@@ -13,35 +17,48 @@
   margin: 30px 30px 15px 0px;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
 .container .button-create:hover {
-  background-color: #00BCD4;
+  background-color: #00bcd4;
 }
-.container th.head {
-  background-color: black;
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 10px 40px;
+.container .button-create {
+  background-color: #aadae0;
+  color: black;
+  border: 1px solid rgb(250, 249, 246);
+  padding: 7px;
+  border-radius: 10px;
+  margin: 30px 30px 15px 0px;
 }
-.container td.body {
-  text-align: center;
-  padding: 10px 40px;
-  border-collapse: collapse;
-  border-bottom: 1px solid black;
+.container .button-create:hover {
+  background-color: #00bcd4;
+}
+.container .button-create:hover {
+  background-color: #00bcd4;
+}
+.container .button-create:hover {
+  background-color: #00bcd4;
+}
+.container .button-create:hover {
+  background-color: #00bcd4;
+}
+.container .button-create:hover {
+  background-color: #00bcd4;
+}
+.container .button-create:hover {
+  background-color: #00bcd4;
 }
 .container tbody tr {
   background-color: rgba(248, 245, 245, 0.5);
@@ -80,27 +97,55 @@
   color: #4CAF50;
 }
 .container .fa.fa-edit:before {
-  color: #00BCD4;
+  color: #00bcd4;
+}
+.container .fa.fa-trash:before {
+  color: red;
+}
+.container th.head {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 40px;
+}
+.container td.body {
+  text-align: center;
+  padding: 10px 40px;
+  border-collapse: collapse;
+  border-bottom: 1px solid black;
+}
+.container tbody tr {
+  background-color: rgba(248, 245, 245, 0.5);
+}
+.container tbody tr:hover {
+  background-color: rgba(207, 204, 204, 0.5);
+}
+.container .fa-eye:before {
+  color: #4caf50;
+}
+.container .fa.fa-edit:before {
+  color: #00bcd4;
 }
 .container .fa.fa-trash:before {
   color: red;
 }
 .container .fa-shopify:before {
-  color: #2196F3;
+  color: #2196f3;
   font-size: 17px;
   transition: transform 0.2s, font-size 0.2s;
 }
 .container .fa-shopify:hover:before {
   font-size: 22px;
-  color: #4CAF50;
+  color: #4caf50;
 }
 .container .fa-cart-plus:before {
-  color: #2196F3;
+  color: #2196f3;
   transition: transform 0.2s, font-size 0.2s;
 }
 .container .fa-cart-plus:hover:before {
   font-size: 22px;
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 span.title {
@@ -117,7 +162,7 @@ i.fa-solid.fa-circle-arrow-left {
 }
 
 .fa-circle-arrow-left:before {
-  color: #00BCD4;
+  color: #00bcd4;
   font-size: 23px;
   margin: 10px;
 }
@@ -212,6 +257,14 @@ td.bodyname {
 
 .nameClient {
   text-transform: capitalize;
+}
+
+.custom-title {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 40px;
 }
 
 /*# sourceMappingURL=app.css.map */
