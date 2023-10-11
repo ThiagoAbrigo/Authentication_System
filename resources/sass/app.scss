@@ -1,8 +1,7 @@
-$button-background-color: blue;
-$button-text-color: white;
+$button-background-color: rgb(255, 255, 255);
+$button-text-color: rgb(0, 81, 255);
 body {
     font-family: inherit;
-    background-color: aqua;
 }
 @mixin button-style($background-color, $text-color) {
     background-color: $background-color;
@@ -56,7 +55,6 @@ body {
     td {
         padding: 10px;
         border: 1px solid #ccc;
-        text-align: center;
     }
 
     th {
@@ -94,5 +92,36 @@ body {
 .container {
     border-radius: 10px;
     background-color: #f7dada;
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        background-color: yellowgreen;
+        width: 145%;
+        .custom-table {
+            margin-left: -45px;
+            width: 121%;
+        }
+        .custom-title {
+            font-size: 24px;
+        }
+        .btn-new-product {
+            margin-top: 5px;
+            margin-left: -45px;
+        }
+    }
+    .filters {
+        h1 {
+            margin-right: 68%;
+        }
+        select {
+            width: 165px;
+            margin-top: -30px;
+            margin-left: 45px;
+        }
+        button {
+            margin-left: 110%;
+        }
+    }
 }
 @import "create";

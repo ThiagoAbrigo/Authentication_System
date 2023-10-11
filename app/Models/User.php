@@ -62,8 +62,9 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new ResetPasswordNotification($token));
-    }
+    //     public function sendPasswordResetNotification($token)
+    //     {
+    //         $this->notify(new ResetPasswordNotification($token));
+    //     }
+    // }
 }

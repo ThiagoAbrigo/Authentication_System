@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+
 
 class ProductController extends Controller
 {
@@ -32,6 +35,30 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'nombre' => 'required|string|max:255',
+            'precio' => 'required|numeric',
+            'nombre' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('products')->where(function ($query) use ($request) {
+                    // Verifica que el nombre no exista en la base de datos
+                    return $query->where('nombre', $request->input('nombre'));
+                }),
+            ],
+        ];
+        // Define mensajes personalizados para las reglas de validación
+        $messages = [
+            'precio.numeric' => 'Price must be a valid number.',
+            'nombre.unique' => 'The product already exists.',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
         $products = new Product;
         $products->nombre = $request->input('nombre');
         $products->precio = $request->input('precio');
@@ -64,6 +91,18 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'nombre' => 'required|string|max:255',
+            'precio' => 'required|numeric',
+        ], [
+            'precio.numeric' => 'Price must be a valid number.',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
         $products = Product::find($id);
         $products->nombre = $request->input('nombre');
         $products->precio = $request->input('precio');

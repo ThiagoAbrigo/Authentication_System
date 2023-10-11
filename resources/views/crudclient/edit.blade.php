@@ -20,24 +20,27 @@
             @csrf
             <legend><b>EDIT PRODUCTS</b></legend>
             <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Nombre:</label>
+                <label for="disabledTextInput" class="form-label">Name:</label>
                 <input type="text" value="{{ $products->nombre }}" name="nombre" id="disabledTextInput"
-                    class="form-control" placeholder="Nombre del producto">
+                    class="form-control" placeholder="Product Name" required>
             </div>
             <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Precio:</label>
+                <label for="disabledTextInput" class="form-label">Price:</label>
                 <input type="text" value="{{ $products->precio }}" name="precio" id="disabledTextInput"
-                    class="form-control" placeholder="Precio del producto">
+                    class="form-control" placeholder="Product price" required>
+                @error('precio')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Cantidad:</label>
+                <label for="disabledTextInput" class="form-label">Quantity:</label>
                 <input type="number" value="{{ $products->cantidad }}" name="cantidad" id="disabledTextInput"
-                    class="form-control" placeholder="Cantidad del producto">
+                    class="form-control" placeholder="Product quantity" required>
             </div>
             <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">categoria:</label>
-                <select name="categoria_id" name="category" class="custom-select" id="inputGroupSelect01">
-                    <option value="">Seleccionar</option>
+                <label for="disabledTextInput" class="form-label">Category:</label>
+                <select name="categoria_id" name="category" class="custom-select" id="inputGroupSelect01" required>
+                    <option value="">Select</option>
                     @foreach ($categorias as $categoria)
                         <option value="{{ $categoria->categoria_id }}"
                             @if ($categoria->categoria_id == $products->categoria_id) {{ 'selected' }} @endif>{{ $categoria->nombre }}
@@ -46,8 +49,8 @@
                 </select>
             </div>
             <div class="button-custom">
-                <a href="{{ url('dashboard') }}" class="btn btn-secondary">Regresar</a>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="{{ url('dashboard') }}" class="btn btn-secondary">Back</a>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>
     </div>
